@@ -1,0 +1,26 @@
+.carousel__container{
+    display: flex;
+    height: 20rem;
+    align-items: center;
+}
+.carousel__content{
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: 65rem;
+    height: 20rem;
+    background-color: red;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    padding: 0 1rem;
+}
+.carousel__photos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carousel__ctrl{
+    height: 5rem;
+    align-items: center;
+    padding: 1rem;
+}
