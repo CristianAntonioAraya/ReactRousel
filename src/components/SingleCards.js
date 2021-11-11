@@ -1,11 +1,11 @@
 import React from 'react'
 
-const SingleCards = () => {
+const SingleCards = ({url}) => {
 
 
     return (
         <div className="singlecard__container">
-            Card xd
+            <img src={url} className="singlecard__image"/>
         </div>
     )
 }

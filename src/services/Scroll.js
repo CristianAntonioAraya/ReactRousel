@@ -9,7 +9,7 @@ const MoveRight = (scrollContainer) => {
             ctrlDer.addEventListener('click', () => {
                 scrollContainer.scrollBy({
                     top: 0,
-                    left: 600,
+                    left: 500,
                     behavior: 'smooth'
                 });
                 isScrollFullRight(scrollContainer); 
@@ -34,7 +34,7 @@ const MoveLeft = (scrollContainer) => {
     ctrlIzq.addEventListener('click', () => {
         scrollContainer.scrollBy({
             top: 0,
-            left: -600,
+            left: -500,
             behavior: 'smooth'
         });
         isScrollFullLeft(scrollContainer);

@@ -1,6 +1,10 @@
 .singlecard__container{
-    width: 10rem;
-    height: 12rem;
+    display: flex;
+    height: 25rem;
     margin: 0 1rem;
-    background-color: blue;
+    background-color: white;
+}
+.single__image{
+    object-fit: contain;
+    
 }

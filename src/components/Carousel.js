@@ -1,29 +1,54 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { handleScroll } from '../services/Scroll'
 import SingleCards from './SingleCards'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faAngleRight, faAngleLeft} from '@fortawesome/free-solid-svg-icons'
+import { getData } from '../services/GetData';
+
 
 const Carousel = () => {
 
-    const photos = [1,2,3,4,5,6,7,8,9,10,12,13,14,15,16,17,18]
+    const [photos, setphotos] = useState(null)
 
     useEffect(() => {
-        handleScroll();
+        const handleGetData = async() => {
+            try {
+                const resp = await getData();
+                setphotos(resp)
+                handleScroll();
+            } catch (error) {
+                console.log(error)
+            }
+        }
+        handleGetData();
     }, [])
+    console.log(photos)
+
+    if(photos === null) {
+        return(
+            <div>
+                <h1>Is Loading</h1>
+            </div>
+        )
+    }
 
     return (
         <div className="carousel__container">
-            <button id="btnIzq" className="carousel__ctrl" >Izq</button>
+            <div className="carousel__ctrl izq">
+                <FontAwesomeIcon className="icon" id="btnIzq" icon={faAngleLeft} />
+            </div>
             <div id="container" className="carousel__content" >
                 <div className="carousel__photos">
                     {
-                        photos.map((index,photo)=> (
-                            <SingleCards key={index}/>
+                        photos.map(photo=> (
+                            <SingleCards key={photo.id} url={photo.urls.regular}/>
                         ))
                     }
-                    
                 </div>
             </div>
-            <button id="btnDer" className="carousel__ctrl" >Der</button>
+            <div className="carousel__ctrl der">
+                <FontAwesomeIcon className="icon" id="btnDer" icon={faAngleRight}/>
+            </div>
         </div>
     )
 }

@@ -1,6 +1,5 @@
 .carousel__container{
     display: flex;
-    height: 20rem;
     align-items: center;
 }
 .carousel__content{
@@ -8,11 +7,14 @@
     position: relative;
     align-items: center;
     width: 65rem;
-    height: 20rem;
-    background-color: red;
+    height: 35rem;
+    background-color: $Primary_Color;
     flex-wrap: nowrap;
     overflow-x: scroll;
-    padding: 0 1rem;
+    margin: 1rem 0;
+    &::-webkit-scrollbar{
+        display: none;
+    }
 }
 .carousel__photos{
     display: flex;
@@ -20,7 +22,23 @@
     align-items: center;
 }
 .carousel__ctrl{
-    height: 5rem;
+    display: flex;
+    height: 35rem;
     align-items: center;
-    padding: 1rem;
+    padding: 0 3rem;
+    background-color: $Primary_Color;
+    border: none;
+    // &:hover{
+    //     background-color: lighten($color: $Primary_Color, $amount: 3);
+    // }
+}
+.icon{
+    color: $Secondary_Color;
+    font-size: 50px;
+}
+.izq{
+    border-radius: 20px 0 0 20px;
+}
+.der{
+    border-radius: 0 20px 20px 0;
 }
