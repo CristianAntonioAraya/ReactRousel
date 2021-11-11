@@ -1,11 +1,14 @@
 .carousel__container{
+    position: relative;
     display: flex;
     align-items: center;
+    z-index: 1;
 }
 .carousel__content{
     display: flex;
     position: relative;
     align-items: center;
+    z-index: 1;
     width: 65rem;
     height: 35rem;
     background-color: $Primary_Color;
@@ -25,12 +28,30 @@
     display: flex;
     height: 35rem;
     align-items: center;
-    padding: 0 3rem;
+    padding: 0 2rem;
     background-color: $Primary_Color;
     border: none;
-    // &:hover{
-    //     background-color: lighten($color: $Primary_Color, $amount: 3);
-    // }
+}
+.carosudel__btn-container{
+    z-index: 1;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    padding: 3rem;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    &:hover{
+        transform: scale(1.5);
+    }
+    &:active{
+        transition: all 1s ease;
+        background-color: lighten($color: $Primary_Color, $amount: 20);
+    }
 }
 .icon{
     color: $Secondary_Color;

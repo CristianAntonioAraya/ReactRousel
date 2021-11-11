@@ -35,19 +35,23 @@ const Carousel = () => {
     return (
         <div className="carousel__container">
             <div className="carousel__ctrl izq">
-                <FontAwesomeIcon className="icon" id="btnIzq" icon={faAngleLeft} />
+                <div id="btnIzq" className="carosudel__btn-container">
+                    <FontAwesomeIcon className="icon" icon={faAngleLeft} />
+                </div>
             </div>
             <div id="container" className="carousel__content" >
                 <div className="carousel__photos">
                     {
                         photos.map(photo=> (
-                            <SingleCards key={photo.id} url={photo.urls.regular}/>
+                            <SingleCards key={photo.id} url={photo.urls.regular} id={photo.id} user={photo.user.name}/>
                         ))
                     }
                 </div>
             </div>
             <div className="carousel__ctrl der">
-                <FontAwesomeIcon className="icon" id="btnDer" icon={faAngleRight}/>
+                <div id="btnDer" className="carosudel__btn-container">
+                    <FontAwesomeIcon className="icon"  icon={faAngleRight}/>
+                </div>
             </div>
         </div>
     )

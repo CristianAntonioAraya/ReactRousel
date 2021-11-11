@@ -13,6 +13,7 @@
     font-family: 'Pacifico', cursive;
     color: $Secondary_Color;
     text-shadow: 2px 2px 0px rgb(255, 255, 255);
+    user-select: none;
 }
 .app__content{
     width: 100%;
